@@ -6,12 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin:"*",
-  methods:["GET","POST","OPTIONS"],
-  allowedHeaders:["Content-Type"]
-}));
-app.options("*",cors());
+app.use(cors());
 app.use(express.json());
 
 app.post("/send-email", async (req, res) => {
